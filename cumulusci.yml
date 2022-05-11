@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.57.0'
+project:
+    name: project-9
+    package:
+        name: project-9
+        api_version: '54.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/project-9/tests
+            options:
+                outputdir: robot/project-9/results
+
+    robot_testdoc:
+        options:
+            path: robot/project-9/tests
+            output: robot/project-9/doc/project-9_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
